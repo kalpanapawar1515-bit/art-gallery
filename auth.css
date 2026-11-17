@@ -1,0 +1,441 @@
+/* =========================================
+   KSP CREATIONS - AUTHENTICATION
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+body.auth-body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(212, 175, 55, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(120, 50, 255, 0.22),
+            transparent 30%
+        ),
+        #090909;
+
+    color: white;
+}
+
+
+/* =========================================
+   MAIN WRAPPER
+   ========================================= */
+
+.auth-wrapper {
+    width: 100%;
+    max-width: 480px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================
+   BRAND
+   ========================================= */
+
+.brand {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+
+.logo {
+    width: 125px !important;
+    height: 125px !important;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 12px;
+
+    border-radius: 18px;
+
+    filter:
+        drop-shadow(
+            0 0 20px rgba(212, 175, 55, 0.30)
+        );
+}
+
+
+.brand h1 {
+    color: #D4AF37 !important;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 6px;
+}
+
+
+.brand p {
+    color: #aaa !important;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   AUTH CARD
+   ========================================= */
+
+.auth-card {
+    width: 100%;
+
+    padding: 32px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================================
+   LOGIN / REGISTER TABS
+   ========================================= */
+
+.toggle {
+    width: 100%;
+
+    display: flex;
+
+    padding: 5px;
+
+    margin-bottom: 30px;
+
+    border-radius: 40px;
+
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+.toggle button {
+    flex: 1;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.toggle button.active {
+    background: #D4AF37;
+
+    color: #111;
+
+    font-weight: 600;
+}
+
+
+.toggle button:hover {
+    color: white;
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.form {
+    display: none;
+}
+
+
+.form.active {
+    display: block;
+
+    animation: formAppear 0.35s ease;
+}
+
+
+.form h2 {
+    color: #ffffff !important;
+
+    text-align: center;
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+
+.form-subtitle {
+    color: #999 !important;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   LABEL
+   ========================================= */
+
+.form label {
+    display: block;
+
+    color: #ddd !important;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================
+   INPUT CONTAINER
+   ========================================= */
+
+.input-box {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+
+/* LEFT ICON */
+
+.input-box > i:first-child {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #D4AF37;
+
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+
+/* INPUT */
+
+.input-box input {
+    width: 100% !important;
+
+    height: 50px;
+
+    padding: 0 45px !important;
+
+    margin: 0 !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+    border-radius: 12px !important;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08) !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px;
+}
+
+
+.input-box input::placeholder {
+    color: #777 !important;
+}
+
+
+.input-box input:focus {
+    border-color: #D4AF37 !important;
+
+    background: rgba(255, 255, 255, 0.11) !important;
+
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.20) !important;
+}
+
+
+/* =========================================
+   PASSWORD EYE
+   ========================================= */
+
+.password-eye {
+    position: absolute;
+
+    right: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #888;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.password-eye:hover {
+    color: #D4AF37;
+}
+
+
+/* =========================================
+   MAIN BUTTON
+   ========================================= */
+
+.main-btn {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #D4AF37,
+            #FFE58A
+        );
+
+    color: #111;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.main-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(212, 175, 55, 0.30);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer-text {
+    margin-top: 18px;
+
+    color: #666 !important;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   ANIMATION
+   ========================================= */
+
+@keyframes formAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 520px) {
+
+    body.auth-body {
+        padding: 20px 15px;
+    }
+
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+
+
+    .logo {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+
+    .brand h1 {
+        font-size: 25px;
+    }
+}

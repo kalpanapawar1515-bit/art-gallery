@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favourites</title>
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="favourites">
+
+
+<!-- NAVBAR -->
+<nav>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'gallery' %}">Gallery</a>
+<a href="{% url 'artists' %}">Artists</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'contact' %}">Contact</a>
+<a href="{% url 'favourites' %}">Favourites</a>
+<a href="{% url 'auth' %}">Auth</a>
+
+<h1>My Favourite Artworks ❤️</h1>
+
+<!-- 🔥 Dynamic favourites (from localStorage) -->
+<div id="favContainer"></div>
+
+<!-- 🔥 Static favourites (your manually added images) -->
+<div class="card-container">
+
+    <div class="card">
+        <img src="{% static 'images/rangoli3.jpeg' %}" alt="Rangoli" onclick="openImage(this)">
+        <div class="card-content">
+            <h3>Shree Gurudev Datta</h3>
+            <p>“Shri Datta Maharaj – devotion expressed through art”</p>
+            <button onclick="alert('This is static image. Remove works only for saved favourites.')">
+                ❌ Remove
+            </button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/paper painting.jpeg' %}" alt="Paper Painting" onclick="openImage(this)">
+        <div class="card-content">
+            <h3>Draupadi Eye</h3>
+            <p>“Eyes that hold emotion, strength, and story.”</p>
+            <button onclick="alert('This is static image. Remove works only for saved favourites.')">
+                ❌ Remove
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- 🔥 Fullscreen Image Viewer -->
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+
+
+<footer>
+    <p>© 2026 KSP Arts | All Rights Reserved</p>
+    <p>Email: ksparts@gmail.com</p>
+    <p>Phone: +91 9309587771</p>
+</footer>
+
+<!-- JS file -->
+<script src="{% static 'js/favourites.js' %}"></script>
+
+</body>
+</html>

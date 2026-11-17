@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="about">
+
+    
+<!-- NAVBAR -->
+<nav>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'gallery' %}">Gallery</a>
+<a href="{% url 'artists' %}">Artists</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'contact' %}">Contact</a>
+<a href="{% url 'favourites' %}">Favourites</a>
+<a href="{% url 'auth' %}">Auth</a>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="about-page">
+   
+    <h1>About KSP Creations</h1>
+
+    <p class="tagline">
+         Creativity • Passion • Imagination
+    </p>
+    
+       <div class="intro">
+
+       <p>
+            KSP Creations is a space where ideas become artwork.
+            Every piece is created with dedication, imagination,
+            and attention to detail.
+        </p>
+
+        <p>
+            From pencil sketches to paintings, rangoli art,
+            fabric painting, and creative crafts,
+            every artwork tells a unique story.
+        </p>
+
+    </div>
+
+    <h2>What Makes KSP Creations Special?</h2>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+            <h3>✏️ Pencil Sketches</h3>
+            <p>Detailed handmade sketches.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>🎨 Paintings</h3>
+            <p>Creative and colorful artwork.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>🌸 Rangoli Art</h3>
+            <p>Traditional and modern designs.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>🖌 Fabric Painting</h3>
+            <p>Creative artwork on fabric.</p>
+        </div>
+
+    </div>
+
+   <div class="circle-process">
+
+    <div class="center">My Process</div>
+
+    <div class="step s1"><span>1</span> Idea</div>
+    <div class="step s2"><span>2</span> Sketch</div>
+    <div class="step s3"><span>3</span> Design</div>
+    <div class="step s4"><span>4</span> Paint</div>
+    <div class="step s5"><span>5</span> Finish</div>
+
+</div>
+    <h2>Why Choose KSP Creations?</h2>
+
+    <div class="features">
+
+        <div>✔ Handmade Artwork</div>
+
+        <div>✔ Original Designs</div>
+
+        <div>✔ Creative Ideas</div>
+
+        <div>✔ Premium Quality</div>
+
+    </div>
+
+
+
+    <blockquote>
+
+        "Every masterpiece begins with a single pencil stroke."
+
+    </blockquote>
+
+</section>
+
+<footer>
+    <p>© 2026 KSP Creations | All Rights Reserved</p>
+    <p>Email: ksparts@gmail.com</p>
+    <p>Phone: +91 9309587771</p>
+</footer>
+
+</body>
+</html>

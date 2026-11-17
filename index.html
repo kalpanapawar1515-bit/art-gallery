@@ -1,0 +1,80 @@
+{% load static %}
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="home">
+
+    
+
+<!-- HEADER -->
+<header>
+   
+    <nav>
+
+        <!-- LOGO -->
+        <div class="logo">
+             <img src="{% static 'images/ksp-art-logo.png' %}" alt="KSP Arts Logo">
+
+        <h2>KSP Creations</h2>
+
+        </div>
+
+        <!-- MENU -->
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'artists' %}">Artists</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+
+        <!-- BUTTONS -->
+        <div>
+            <a href="{% url 'auth' %}">Login</a>
+        </div>
+
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+
+
+
+<section class="hero">
+    <img src="{% static 'images/kalpana.jpg.jpeg' %}"
+     alt="Kalpana"
+     class="Profile-img">
+
+    <h1>Hi, I'm <span>Kalpana</span></h1>
+
+    <h3>Pencial Artist & creative Designer</h3>
+
+    <p>
+        Art Begins With a Pencial.
+        I transform imagination into Beautiful
+        pencial sketches, paintings, rangoli art,
+        fabric art and creative artworks.
+    </p>
+
+   <a href="{% url 'gallery' %}" class="btn"> View Gallery</a>
+    </a>
+
+</section>
+
+<footer>
+        <p>© Art Gallery</p>
+</footer>
+
+<footer>
+    <p>© 2026 KSP Arts | All Rights Reserved</p>
+    <p>Email: ksparts@gmail.com</p>
+    <p>Phone: +91 9309587771</p>
+</footer>
+
+
+
+</body>
+</html>

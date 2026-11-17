@@ -1,0 +1,219 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KSP Creations | Authentication</title>
+
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-wrapper">
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <img
+                src="{% static 'images/logo.png' %}"
+                class="logo"
+                alt="KSP Creations">
+
+            <h1>KSP Creations</h1>
+
+            <p>Where imagination becomes art.</p>
+
+        </div>
+
+
+        <!-- AUTH CARD -->
+
+        <div class="auth-card">
+
+            <!-- TABS -->
+
+            <div class="toggle">
+
+                <button
+                    id="loginBtn"
+                    class="active"
+                    onclick="showLogin()">
+                    Login
+                </button>
+
+                <button
+                    id="registerBtn"
+                    onclick="showRegister()">
+                    Register
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div id="loginForm" class="form active">
+
+                <h2>Welcome Back</h2>
+
+                <p class="form-subtitle">
+                    Sign in to continue your creative journey.
+                </p>
+
+                <form
+                    method="POST"
+                    action="{% url 'login_user' %}">
+
+                    {% csrf_token %}
+
+                    <label>Email</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            required>
+
+                        <i
+                            class="fa-solid fa-eye password-eye"
+                            onclick="toggleLoginPassword(this)">
+                        </i>
+
+                    </div>
+
+
+                    <button
+                        class="main-btn"
+                        type="submit">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div id="registerForm" class="form">
+
+                <h2>Create Account</h2>
+
+                <p class="form-subtitle">
+                    Create your account and start exploring art.
+                </p>
+
+                <form
+                    method="POST"
+                    action="{% url 'register_user' %}">
+
+                    {% csrf_token %}
+
+                    <label>Full Name</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <label>Email</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="regPassword"
+                            name="password"
+                            placeholder="Create a password"
+                            required>
+
+                        <i
+                            class="fa-solid fa-eye password-eye"
+                            onclick="toggleRegisterPassword(this)">
+                        </i>
+
+                    </div>
+
+
+                    <button
+                        class="main-btn"
+                        type="submit">
+
+                        Create Account
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <p class="footer-text">
+            Art • Inspire • Create
+        </p>
+
+    </div>
+
+
+    <script src="{% static 'js/auth.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Artists</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="artists">
+
+  
+
+<!-- NAVBAR -->
+<nav>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'gallery' %}">Gallery</a>
+<a href="{% url 'artists' %}">Artists</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'contact' %}">Contact</a>
+<a href="{% url 'favourites' %}">Favourites</a>
+<a href="{% url 'auth' %}">Auth</a>
+</nav>
+
+<h1>Our Artists</h1>
+
+<!-- ARTISTS CONTAINER -->
+<div class="card-container">
+
+    <!-- ARTIST CARD 1 -->
+    <div class="card">
+        <img src="{% static 'images/wall art by KP.jpg.jpeg' %}" alt="Wall Painting" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Kalpana Pawar</h3>
+            <p><strong>Founder of KSP Arts</strong></p>
+            <p>Specialization:</p>
+            <ul>
+                <li>Wall Art</li>
+                <li>Fabric Painting</li>
+                <li>Paper Painting</li>
+                <li>Rangoli</li>
+                <li>Drawing</li>
+            </ul>
+            <p>
+                Passionate artist creating handmade artworks
+                that blend creativity, culture, and devotion.
+            </p>
+        </div>
+    </div>
+
+    <!-- ARTIST CARD 2 -->
+    <div class="card">
+        <img src="{% static 'images/paper painting.jpeg' %}" alt="paint by ksp arts" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>KSP Arts</h3>
+
+        <p><strong>Mythological Artwork</strong></p>
+
+    <p>
+          Capturing the grace, courage, and spirit of
+        Draupadi through artistic expression.
+    </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Fullscreen container -->
+    <div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+    </div>
+
+
+    <footer>
+    <p>© 2026 KSP Arts | All Rights Reserved</p>
+    <p>Email: ksparts@gmail.com</p>
+    <p>Phone: +91 9309587771</p>
+</footer>
+
+<script src="{% static 'js/artists.js' %}"></script>
+
+
+</body>
+</html>

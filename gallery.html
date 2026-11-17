@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Gallery</title>
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="gallery">
+
+   
+<nav>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'gallery' %}">Gallery</a>
+<a href="{% url 'artists' %}">Artists</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'contact' %}">Contact</a>
+<a href="{% url 'favourites' %}">Favourites</a>
+<a href="{% url 'auth' %}">Auth</a>
+</nav>
+
+<h1>Art Gallery</h1>
+
+    <p class="art-counter">
+    Total Artworks: <span id="artCount">0</span>
+</p>
+
+<!-- SEARCH -->
+<input
+    type="text"
+    id="searchInput"
+    placeholder="🔍 Search Artwork..."
+    onkeyup="searchArt()">
+
+<script src="{% static 'js/gallery.js' %}"></script>
+
+
+
+<!-- FILTER BUTTONS -->
+<div class="filters">
+
+    <button onclick="filterArt('all')">All</button>
+    <button onclick="filterArt('Paper Painting')">Paper Painting</button>
+    <button onclick="filterArt('Wall Art')">Wall Art</button>
+    <button onclick="filterArt('Fabric Painting')">Fabric</button>
+    <button onclick="filterArt('Drawing')">Drawing</button>
+    <button onclick="filterArt('Rangoli')">Rangoli</button>
+</div>
+<!-- CARD CONTAINER -->
+<div class="card-container">
+
+    <!-- CARD 1 -->
+    <div class="card" data-category="Wall Art">
+        <img src="{% static 'images/wall1.jpg.jpeg' %}" alt="Wall Art1" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Wall Art</h3>
+            <p>Artist: Kalpana</p>
+            <p>"Sunshine captured in every stroke."</p>
+            <button onclick="addToFavourites('wall1','images/wall1.jpg.jpeg','Wall Art','Sunshine captured in every stroke')">
+             <span id="heart-wall1"> 🤍</span> Like</button>
+        </div>
+    </div>
+
+    <div class="card" data-category="Wall Art">
+        <img src="{% static 'images/wall2.jpg.jpeg' %}" alt="Wall Art2" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Wall Art</h3>
+            <p>Artist: Kalpana</p>
+            <p>"Peacock elegance on the wall."</p>
+            <button onclick="addToFavourites('wall2','images/wall2.jpg.jpeg','Wall Art','Peacock elegance on the wall')">
+            <span id="heart-wall2"> 🤍</span> Like</button>
+        </div>
+    </div>
+
+
+    <div class="card" data-category="Wall Art">
+        <img src="{% static 'images/wall3.jpg.jpeg' %}" alt="Wall Art3" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Wall Art</h3>
+            <p>Artist: Kalpana</p>
+            <p>"Walls that speak through art."</p>
+            <button onclick="addToFavourites('wall3','images/wall3.jpg.jpeg','Wall Art','Walls that speak through art')">
+                <span id="heart-wall3"> 🤍</span> Like</button>
+        </div>
+    </div>
+
+
+    <div class="card" data-category="Fabric Painting">
+        <img src="{% static 'images/fabric.jpeg' %}" alt="Fabric Painting" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Fabric Painting</h3>
+            <p>Artist: Kalpana</p>
+            <p>"A creative expression of Krishna's charm and Ganpati's wisdom."</p>
+            <button onclick="addToFavourites('fabric','images/fabric.jpg.jpeg','Fabric Painting','A creative expression of Krishna charm and Ganpati wisdom')">
+            <span id="heart-fabric"> 🤍</span> Like</button>
+        </div>
+    </div>
+
+     <div class="card" data-category="Drawing">
+        <img src="{% static 'images/drawing.jpg.jpeg' %}" alt="Drawing" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Drawing</h3>
+            <p>Artist: Kalpana</p>
+            <p>“Where purity meets artistic imagination.”</p>
+            <button onclick="addToFavourites('drawing','images/drawing.jpg.jpeg','Drawing','Where purity meets artistic imagination')">
+                <span id="heart-drawing"> 🤍</span>Like</button>
+        </div>
+    </div>
+
+    <div class="card" data-category="Paper Painting">
+        <img src="{% static 'images/painting.jpeg' %}" alt="Paper Painting" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Paper Painting</h3>
+            <p>Artist: Kalpana</p>
+            <p>"Radha - the soul of krishna's love, captured in colors."</p>
+            <button onclick="addToFavourites('painting','images/painting.jpeg', 'Paper Painting', 'Radha - the soul of krishna love, captured in colors')">
+                <span id="heart-painting"> 🤍</span> Like</button>
+        </div>
+    </div>
+
+    <div class="card" data-category="Rangoli">
+        <img src="{% static 'images/rangoli1.jpeg' %}" alt="Rangoli" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Rangoli</h3>
+            <p>Artist: Rangoli by Ksp</p>
+            <p>"Every color bows to the power of the Goddess".</p>
+            <button onclick="addToFavourites('rangoli1','images/rangoli1.jpeg', 'Rangoli','Every color bows to the power of the Goddess')">
+                <span id="heart-rangoli1"> 🤍</span> Like</button>
+        </div>
+    </div>
+
+    <div class="card" data-category="Rangoli">
+        <img src="{% static 'images/rangoli2.jpeg' %}" alt="Rangoli" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Rangoli</h3>
+            <p>Artist: Rangoli by Ksp</p>
+            <p>"Art on the floor, made the faith."</p>
+            <button onclick="addToFavourites('rangoli2','images/rangoli2.jpeg','Rangoli','Art on the floor, made the faith')">
+                <span id="heart-rangoli2"> 🤍</span>  Like</button>
+        </div>
+    </div>
+
+    <div class="card" data-category="Rangoli">
+        <img src="{% static 'images/rangoli3.jpeg' %}" alt="Rangoli" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Rangoli</h3>
+            <p>Artist: Rangoli by Ksp</p>
+            <p>“Shree Gurudev Datta – devotion in every color.”</p>
+            <button onclick="addToFavourites('rangoli3','images/rangoli3.jpeg','Rangoli','Shree Gurudev Datta – devotion in every color')">
+                <span id="heart-rangoli3"> 🤍</span>  Like</button>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" data-category="Pencial Drawing">
+        <img src="{% static 'images/drawing1.jpg.jpeg' %}" alt="Drawing" onclick="openImage(this)">
+
+        <div class="card-content">
+            <h3>Pencial Drawing</h3>
+            <p>Artist: Art By KSP</p>
+            <p>“Art that explores vision, reality, and imagination.”</p>
+            <button onclick="addToFavourites('drawing1','images/drawing1.jpeg','Pencial Drawing','Art that explores vision, reality, and imagination')">
+                <span id="heart-drawing1"> 🤍</span> Like</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Fullscreen container -->
+    <div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+    </div>
+
+    <footer>
+    <p>© 2026 KSP Arts | All Rights Reserved</p>
+    <p>Email: ksparts@gmail.com</p>
+    <p>Phone: +91 9309587771</p>
+</footer>
+
+
+
+</body>
+</html>
